@@ -1,4 +1,5 @@
 import { DC } from "../constants";
+import { Currency } from "../currency";
 
 import { DimensionState } from "./dimension";
 
@@ -82,7 +83,9 @@ export function getDimensionFinalMultiplierUncached(tier) {
   if (AlchemyResource.inflation.isUnlocked && multiplier.gte(AlchemyResource.inflation.effectValue)) {
     multiplier = multiplier.pow(1.05);
   }
-  multiplier = (multiplier ^ 0.5)
+  if (Currency.antimatter.gt(1)){
+  multiplier = multiplier.div((Currency.antimatter.pow(0.2)))
+  };
   return multiplier;
 }
 

@@ -50,7 +50,7 @@ export const pelleQuotes = {
       "Hi.",
       "You are finally here.",
       "You're stuck here",
-      { text: "$1.", 1: forever },
+      "Forever.",
       "I have already won.",
       "You have lost",
       "I hope your ready to finish this journey once and for all.",

@@ -135,8 +135,6 @@ function applyNDMultipliers(mult, tier) {
   if (Achievement(43).isUnlocked) {
     multiplier = multiplier.times(1 + tier / 100);
   }
-
-  multiplier = multiplier.clampMin(1);
    
   if (tier === 1){
     if (Currency.antimatter.gt(1)){

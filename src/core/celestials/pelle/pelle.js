@@ -101,8 +101,8 @@ export const Pelle = {
     player.auto.antimatterDims.isActive = true;
 
     player.buyUntil10 = true;
-    player.records.realTimeDoomed = 0;
-    for (const res of AlchemyResources.all) res.amount = 0;
+    player.records.realTimeDoomed = new Decimal(0);
+    for (const res of AlchemyResources.all) res.amount = new Decimal(0);
     AutomatorBackend.stop();
 
     // Force-unhide all tabs except for the shop tab, for which we retain the hide state instead

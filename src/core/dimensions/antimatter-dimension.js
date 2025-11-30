@@ -84,9 +84,7 @@ export function getDimensionFinalMultiplierUncached(tier) {
   if (AlchemyResource.inflation.isUnlocked && multiplier.gte(AlchemyResource.inflation.effectValue)) {
     multiplier = multiplier.pow(1.05);
   }
-  if (Currency.antimatter.gt(1)){
-  multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.2)))
-  };
+  
   return multiplier;
 }
 
@@ -115,12 +113,15 @@ function applyNDMultipliers(mult, tier) {
       .timesEffectsOf(
         InfinityUpgrade.unspentIPMult,
         InfinityUpgrade.unspentIPMult.chargedEffect,
-        Achievement(28),
-        Achievement(31),
-        Achievement(68),
-        Achievement(71),
-        TimeStudy(234)
+        Achievement(28);
+        Achievement(31);
+        Achievement(68);
+        Achievement(71);
+        TimeStudy(234);
       );
+      if (Currency.antimatter.gt(1)){
+        multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.2)))
+      };
   }
   if (tier === 8) {
     multiplier = multiplier.times(Sacrifice.totalBoost);

@@ -10,7 +10,7 @@ export const pelleRifts = {
     baseEffect: x => `IP gain ${formatX(x, 2, 2)}`,
     additionalEffects: () => [PelleRifts.vacuum.milestones[2]],
     strike: () => PelleStrikes.infinity,
-    percentage: totalFill => Decimal.log10(totalFill.plus(1).log10().mul(10).add(1)).pow(2.5).div(100).mantissa *
+    percentage: totalFill => Decimal.log10(totalFill.plus(1).log10().mul(10).add(1).pow(0.6)).pow(2.5).div(100).mantissa *
       (10 ** Decimal.log10(totalFill.plus(1).log10().mul(10).add(1)).pow(2.5).div(100).exponent),
     percentageToFill: percentage => Decimal.pow(10,
       Decimal.pow(10, (percentage * 100) ** (1 / 2.5)).div(10).minus(0.1)
@@ -41,11 +41,11 @@ export const pelleRifts = {
         resource: "vacuum",
         requirement: 0.4,
         description: () => `${wordShift.wordCycle(PelleRifts.vacuum.name)} also affects EP gain`,
-        effect: () => Decimal.pow(4, PelleRifts.vacuum.totalFill.max(1).log10().div(616).add(3)),
+        effect: () => Decimal.pow(4, PelleRifts.vacuum.totalFill.max(1).log10().div(616).add(3).pow(0.6)),
         formatEffect: x => `EP gain ${formatX(x, 2, 2)}`
       },
     ],
-    galaxyGeneratorText: "There is not enough space left for more, you must fill in the $value"
+    galaxyGeneratorText: "STOP IT! DO NOT DRAIN THE $value TO CONTINUE FILLING THE GENERATOR!"
   },
   decay: {
     id: 2,
@@ -57,7 +57,7 @@ export const pelleRifts = {
     additionalEffects: () => [PelleRifts.decay.milestones[0], PelleRifts.decay.milestones[2]],
     strike: () => PelleStrikes.powerGalaxies,
     // 0 - 1
-    percentage: totalFill => totalFill.plus(1).log10().div(2000).mantissa *
+    percentage: totalFill => totalFill.plus(1).log10().pow(0.6).div(2000).mantissa *
       (10 ** totalFill.plus(1).log10().div(2000).exponent),
     // 0 - 1
     percentageToFill: percentage => Decimal.pow(10, 20 * percentage * 100).minus(1),
@@ -80,21 +80,21 @@ export const pelleRifts = {
         resource: "decay",
         requirement: 0.6,
         description: () => `When Replicanti exceeds ${format(DC.E1300)},
-          all Galaxies are ${formatPercents(0.1)} more effective`,
-        effect: () => (Replicanti.amount.gt(DC.E1300) ? 1.1 : 1)
+          all Galaxies are ${formatPercents(0.01)} more effective`,
+        effect: () => (Replicanti.amount.gt(DC.E1300) ? 1.01 : 1)
       },
       {
         resource: "decay",
         requirement: 1,
-        description: "Increase max Replicanti Galaxies based on total Rift milestones",
+        description: "Increase max Replicanti Galaxies based on total Rift milestones DIVIDED by 2, loser.",
         effect: () => {
-          const x = PelleRifts.totalMilestones();
+          const x = PelleRifts.totalMilestones().div(2);
           return x ** 2 - 2 * x;
         },
         formatEffect: x => `Max RG count +${formatInt(x)}`
       },
     ],
-    galaxyGeneratorText: "There's not enough antimatter to form new Galaxies, you need to reverse the $value"
+    galaxyGeneratorText: "STOP IT! DO NOT DRAIN THE $value TO CONTINUE FILLING THE GENERATOR!"
   },
   chaos: {
     id: 3,
@@ -126,7 +126,7 @@ export const pelleRifts = {
     milestones: [
       {
         resource: "chaos",
-        requirement: 0.09,
+        requirement: 0.01,
         description: () => `${wordShift.wordCycle(PelleRifts.decay.name)} \
         effect is always maxed and milestones always active`
       },

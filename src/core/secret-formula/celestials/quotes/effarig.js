@@ -19,7 +19,7 @@ export const effarigQuotes = {
   unlockGlyphFilter: {
     id: 2,
     lines: [
-      "This purchase will help you out."
+      "This purchase will not help you out."
     ]
   },
   unlockSetSaves: {

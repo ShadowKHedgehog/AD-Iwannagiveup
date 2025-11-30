@@ -48,21 +48,13 @@ export const pelleQuotes = {
     id: 0,
     lines: [
       "Hi.",
-      "You are here.",
-      "You are trapped here.",
+      "You are finally here.",
+      "You're stuck here",
       { text: "$1.", 1: forever },
       "I have already won.",
-      "And since that is the case, I can monologue, or reminisce.",
-      { text: "How long have we done this $1?", 1: dance },
-      "How many times have we been here before?",
-      { text: "How many plans have you, the $1, operated?", 1: destroyer },
-      { text: "All to try and fulfill your $1?", 1: mandate },
-      { text: "And how many times have you fallen before the $1?", 1: eternal },
-      "Count them, if you remember.",
-      { text: "Not even the $1, the 6 named and the innumerable unnamed.", 1: deities },
-      { text: "The complex, the irrational, those that go $1.", 1: unseen },
-      { text: "Of course, the great $1 does not remember this.", 1: destroyer },
-      { text: "All those $1 that you hide every time.", 1: battles }
+      "You have lost",
+      "I hope your ready to finish this journey once and for all.",
+      "Goodbye. Good luck."
     ],
   },
   arm: {

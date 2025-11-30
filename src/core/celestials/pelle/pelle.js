@@ -280,9 +280,9 @@ export const Pelle = {
   },
 
   get remnantsGain() {
-    let am = this.cel.records.totalAntimatter.plus(1).log10();
-    let ip = this.cel.records.totalInfinityPoints.plus(1).log10();
-    let ep = this.cel.records.totalEternityPoints.plus(1).log10();
+    let am = this.cel.records.totalAntimatter.plus(1).log10().pow(0.4);
+    let ip = this.cel.records.totalInfinityPoints.plus(1).log10().pow(0.5);
+    let ep = this.cel.records.totalEternityPoints.plus(1).log10().pow(0.6);
 
     if (PelleStrikes.dilation.hasStrike) {
       am = am.times(500);
@@ -290,13 +290,13 @@ export const Pelle = {
       ep = ep.times(5);
     }
 
-    const gain = am.add(2).log10().add(ip.add(2).log10()).add(ep.add(2).log10()).div(1.64).pow(7.5);
+    const gain = am.add(2).log10().add(ip.add(2).log10()).add(ep.add(2).log10()).div(1.64).pow(7.5).pow(0.4);
 
     return gain.lt(1) ? gain : Decimal.floor(gain.minus(this.cel.remnants));
   },
 
   realityShardGain(remnants) {
-    return Decimal.pow(10, Decimal.pow(remnants, (1 / 7.5)).times(4)).minus(1).div(1e3);
+    return Decimal.pow(10, Decimal.pow(remnants, (1 / 7.5)).times(4)).minus(1).div(1e3).pow(0.3);
   },
 
   get realityShardGainPerSecond() {
@@ -309,7 +309,7 @@ export const Pelle = {
 
   // Calculations assume this is in units of proportion per second (eg. 0.03 is 3% drain per second)
   get riftDrainPercent() {
-    return 0.03;
+    return 0.05;
   },
 
   get glyphMaxLevel() {
@@ -352,7 +352,7 @@ export const Pelle = {
     return zalgo(str, Math.floor(stage ** 2 * 7));
   },
 
-  endTabNames: "End Is Nigh Destruction Is Imminent Help Us Good Bye Forever".split(" "),
+  endTabNames: "You Have Won Freedom Is Yours I Lost Good Bye Forever".split(" "),
 
   quotes: Quotes.pelle,
 

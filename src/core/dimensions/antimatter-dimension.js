@@ -118,10 +118,7 @@ function applyNDMultipliers(mult, tier) {
         Achievement(68),
         Achievement(71),
         TimeStudy(234),
-      );
-      if (Currency.antimatter.gt(1)){
-        multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.2)))
-      };
+      );  
   }
   if (tier === 8) {
     multiplier = multiplier.times(Sacrifice.totalBoost);
@@ -140,7 +137,12 @@ function applyNDMultipliers(mult, tier) {
   }
 
   multiplier = multiplier.clampMin(1);
-
+   
+  if (tier === 1){
+    if (Currency.antimatter.gt(1)){
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.2)))
+    };
+  }
   return multiplier;
 }
 

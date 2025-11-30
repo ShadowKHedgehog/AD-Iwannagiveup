@@ -84,7 +84,7 @@ export function getDimensionFinalMultiplierUncached(tier) {
     multiplier = multiplier.pow(1.05);
   }
   if (Currency.antimatter.gt(1)){
-  multiplier = multiplier.div((Currency.antimatter.pow(0.2)))
+  multiplier = multiplier.div(((Currency.antimatter).pow(0.2)))
   };
   return multiplier;
 }

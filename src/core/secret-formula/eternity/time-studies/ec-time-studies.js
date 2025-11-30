@@ -3,7 +3,7 @@ import { DC } from "../../../constants";
 export const ecTimeStudies = [
   {
     id: 1,
-    cost: new Decimal(30),
+    cost: new Decimal(85),
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -15,7 +15,7 @@ export const ecTimeStudies = [
   },
   {
     id: 2,
-    cost: new Decimal(35),
+    cost: new Decimal(105),
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -27,7 +27,7 @@ export const ecTimeStudies = [
   },
   {
     id: 3,
-    cost: new Decimal(40),
+    cost: new Decimal(95),
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -39,7 +39,7 @@ export const ecTimeStudies = [
   },
   {
     id: 4,
-    cost: new Decimal(70),
+    cost: new Decimal(170),
     requirement: [143],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -51,7 +51,7 @@ export const ecTimeStudies = [
   },
   {
     id: 5,
-    cost: new Decimal(130),
+    cost: new Decimal(230),
     requirement: [42],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -63,7 +63,7 @@ export const ecTimeStudies = [
   },
   {
     id: 6,
-    cost: new Decimal(85),
+    cost: new Decimal(285),
     requirement: [121],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -75,7 +75,7 @@ export const ecTimeStudies = [
   },
   {
     id: 7,
-    cost: new Decimal(115),
+    cost: new Decimal(215),
     requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -87,7 +87,7 @@ export const ecTimeStudies = [
   },
   {
     id: 8,
-    cost: new Decimal(115),
+    cost: new Decimal(315),
     requirement: [123],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -99,7 +99,7 @@ export const ecTimeStudies = [
   },
   {
     id: 9,
-    cost: new Decimal(415),
+    cost: new Decimal(615),
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -111,7 +111,7 @@ export const ecTimeStudies = [
   },
   {
     id: 10,
-    cost: new Decimal(550),
+    cost: new Decimal(500),
     requirement: [181],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -123,7 +123,7 @@ export const ecTimeStudies = [
   },
   {
     id: 11,
-    cost: DC.D1,
+    cost: new Decimal(1500),
     requirement: [231, 232],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -133,7 +133,7 @@ export const ecTimeStudies = [
   },
   {
     id: 12,
-    cost: DC.D1,
+    cost: new Decimal(1500),
     requirement: [233, 234],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {

@@ -50,7 +50,7 @@ export const dilationTimeStudies = [
       : "Unlock Reality"),
     cost: DC.D1,
     requirement: () => TimeStudy.timeDimension(8).isBought &&
-      player.records.thisReality.maxEP.add(1).log10().gte(4000) &&
+      player.records.thisReality.maxEP.add(1).log10().gte(7000) &&
       (Perk.firstPerk.isBought || Achievements.preReality.every(a => a.isUnlocked)) &&
       !Pelle.isDoomed
   }

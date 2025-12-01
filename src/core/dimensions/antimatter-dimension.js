@@ -138,7 +138,7 @@ function applyNDMultipliers(mult, tier) {
    
   if (tier === 1){
     if (Currency.antimatter.gt(1)){
-      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.08)))
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.10)))
     };
   }
   return multiplier;

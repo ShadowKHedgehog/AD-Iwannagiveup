@@ -57,6 +57,8 @@ export const normalAchievements = [
         : "Buy an 8th Antimatter Dimension.";
     },
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {return `Eighth Antimatter Dimensions multiply all Dimension Multipliers by`;},
+    effect: () => Decimal.pow(AntimatterDimension(8).amount.div(1.3), 0.45)
   },
   {
     id: 21,

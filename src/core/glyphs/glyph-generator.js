@@ -249,7 +249,7 @@ export const GlyphGenerator = {
     let num = Decimal.min(
       maxEffects,
       // eslint-disable-next-line max-len
-      Decimal.floor(Decimal.pow(random1, DC.D1.sub((Decimal.pow((level)).div(45))).times(1.3).add(1))
+      Decimal.floor(Decimal.pow(random1, DC.D1.sub((Decimal.pow(level)).div(45))).times(1.3).add(1))
     ).min(250).toNumber();
     // Incase someone somehow forgets to put a limit, this .min(250) is a final protection
     // If we do decide to add anything else that boosts chance of an extra effect, keeping the code like this

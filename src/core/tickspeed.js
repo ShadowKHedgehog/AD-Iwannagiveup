@@ -73,7 +73,7 @@ export function buyTickSpeed() {
     Tickspeed.multiplySameCosts();
   }
   Tutorial.turnOffEffect(TUTORIAL_STATE.TICKSPEED);
-  Currency.antimatter.subtract(Tickspeed.cost);
+  Currency.antimatter.minus(Tickspeed.cost);
   player.totalTickBought = player.totalTickBought.add(1);
   player.records.thisInfinity.lastBuyTime = player.records.thisInfinity.time;
   player.requirementChecks.permanent.singleTickspeed++;

@@ -149,7 +149,7 @@ export const Pelle = {
   },
 
   get canArmageddon() {
-    return this.remnantsGain.gte(1);
+    return this.remnantsGain.gte(0.2);
   },
 
   armageddon(gainStuff) {
@@ -280,8 +280,8 @@ export const Pelle = {
   },
 
   get remnantsGain() {
-    let am = this.cel.records.totalAntimatter.plus(1).log10().pow(0.4);
-    let ip = this.cel.records.totalInfinityPoints.plus(1).log10().pow(0.5);
+    let am = this.cel.records.totalAntimatter.plus(1).log10().pow(0.8);
+    let ip = this.cel.records.totalInfinityPoints.plus(1).log10().pow(0.7);
     let ep = this.cel.records.totalEternityPoints.plus(1).log10().pow(0.6);
 
     if (PelleStrikes.dilation.hasStrike) {

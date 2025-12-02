@@ -24,14 +24,14 @@ export class DimBoost {
       InfinityUpgrade.dimboostMult,
       InfinityChallenge(7).reward,
       InfinityChallenge(7),
-      TimeStudy(81)
+      TimeStudy(81),
+      Achievement(15),
     ))
       .timesEffectsOf(
         TimeStudy(83),
         TimeStudy(231),
         Achievement(117),
         Achievement(142),
-        Achievement(15),
         GlyphEffect.dimBoostPower,
         PelleRifts.recursion.milestones[0]
       ).powEffectsOf(InfinityUpgrade.dimboostMult.chargedEffect);

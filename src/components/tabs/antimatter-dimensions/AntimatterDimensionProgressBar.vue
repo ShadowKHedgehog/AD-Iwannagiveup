@@ -81,16 +81,16 @@ export default {
           if (player.break) {
             setProgress(Currency.infinityPoints.value, new Decimal(5e11), "Percentage to second Strike");
           } else {
-            setProgress(Currency.antimatter.value, new Decimal(Number.MAX_VALUE), "Percentage to Infinity");
+            setProgress(Currency.antimatter.value, new Decimal(DC.E450), "Percentage to Infinity");
           }
         } else {
-          setProgress(Currency.antimatter.value, new Decimal(Number.MAX_VALUE), "Percentage to first Strike");
+          setProgress(Currency.antimatter.value, new Decimal(DC.E450), "Percentage to first Strike");
         }
       } else if (Enslaved.isCompleted) {
         // Show all other goals from the top down, starting at features in the highest prestige layer
         setProgress(Currency.infinityPoints.value, Tesseracts.nextCost, "Percentage to next Tesseract");
       } else if (PlayerProgress.dilationUnlocked()) {
-        setProgress(Currency.eternityPoints.value, DC.E4000, "Percentage to Reality");
+        setProgress(Currency.eternityPoints.value, DC.E7000, "Percentage to Reality");
       } else if (InfinityDimension(8).isUnlocked) {
         setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Percentage to Eternity");
       } else if (player.break) {
@@ -104,7 +104,7 @@ export default {
           setProgress(player.infinityPoints, nextID.ipRequirement, text);
         }
       } else {
-        setProgress(Currency.antimatter.value, new Decimal(Number.MAX_VALUE), "Percentage to Infinity");
+        setProgress(Currency.antimatter.value, new Decimal(DC.E450), "Percentage to Infinity");
       }
     }
   }

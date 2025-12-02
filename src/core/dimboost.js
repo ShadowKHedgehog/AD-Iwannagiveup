@@ -25,7 +25,6 @@ export class DimBoost {
       InfinityChallenge(7).reward,
       InfinityChallenge(7),
       TimeStudy(81),
-      Achievement(15),
     ))
       .timesEffectsOf(
         TimeStudy(83),

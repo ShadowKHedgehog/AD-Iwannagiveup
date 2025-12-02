@@ -398,7 +398,7 @@ export const celestialNavigation = {
       if (EffarigUnlock.infinity.isUnlocked) return 1;
       if (!Effarig.isRunning) return 0;
 
-      return Currency.antimatter.value.add(1).log10().div(DC.NUMMAX.log10()).max(1).toNumber();
+      return Currency.antimatter.value.add(1).log10().div(DC.E450.log10()).max(1).toNumber();
     },
     node: {
       clickAction: () => Tab.celestials.effarig.show(true),
@@ -416,7 +416,7 @@ export const celestialNavigation = {
           const am = Effarig.isRunning ? Currency.antimatter.value : 0;
           return [
             "Effarig's Infinity",
-            `Reach ${format(am, 2)} / ${format(Number.MAX_VALUE, 2)}`,
+            `Reach ${format(am, 2)} / ${format(DC.E450, 2)}`,
             "Antimatter inside Effarig's Reality."
           ];
         },
@@ -439,7 +439,7 @@ export const celestialNavigation = {
       if (EffarigUnlock.eternity.isUnlocked) return 1;
       if (!Effarig.isRunning) return 0;
 
-      return Currency.infinityPoints.value.add(1).log10().div(DC.NUMMAX.log10()).max(1).toNumber();
+      return Currency.infinityPoints.value.add(1).log10().div(DC.E450.log10()).max(1).toNumber();
     },
     node: {
       clickAction: () => Tab.celestials.effarig.show(true),
@@ -457,7 +457,7 @@ export const celestialNavigation = {
           const ip = Effarig.isRunning ? Currency.infinityPoints.value : 0;
           return [
             "Effarig's Eternity",
-            `Reach ${format(ip, 2)} / ${format(Number.MAX_VALUE, 2)}`,
+            `Reach ${format(ip, 2)} / ${format(DC.E450, 2)}`,
             "Infinity Points inside Effarig's Reality."
           ];
         },

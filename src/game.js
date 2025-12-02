@@ -85,7 +85,7 @@ export function breakInfinity() {
 
 export function gainedInfinityPoints() {
   const div = new Decimal(Effects.min(
-    308,
+    450,
     Achievement(103),
     TimeStudy(111)
   )).toNumber();
@@ -97,7 +97,7 @@ export function gainedInfinityPoints() {
   }
   let ip = player.break
     ? Decimal.pow10(player.records.thisInfinity.maxAM.max(1).log10().div(div).sub(0.75))
-    : new Decimal(308 / div);
+    : new Decimal(450 / div);
   if (Effarig.isRunning && Effarig.currentStage === EFFARIG_STAGES.ETERNITY) {
     ip = ip.min(DC.E200);
   }
@@ -133,7 +133,7 @@ function totalEPMult() {
 
 export function gainedEternityPoints() {
   let ep = DC.D5.pow(player.records.thisEternity.maxIP.plus(
-    gainedInfinityPoints()).max(1).log10().div(new Decimal(308).sub(PelleRifts.recursion.effectValue)).sub(0.7))
+    gainedInfinityPoints()).max(1).log10().div(new Decimal(450).sub(PelleRifts.recursion.effectValue)).sub(0.7))
     .times(totalEPMult());
 
   if (Teresa.isRunning) {
@@ -151,8 +151,8 @@ export function gainedEternityPoints() {
 }
 
 export function requiredIPForEP(epAmount) {
-  return Decimal.pow10((Decimal.log10(Decimal.divide(epAmount, totalEPMult()), 5).times(308).plus(0.7)))
-    .clampMin(Number.MAX_VALUE);
+  return Decimal.pow10((Decimal.log10(Decimal.divide(epAmount, totalEPMult()), 5).times(500).plus(0.7)))
+    .clampMin(DC.E500);
 }
 
 export function gainedGlyphLevel() {

@@ -533,7 +533,7 @@ class AntimatterDimensionState extends DimensionState {
     */
   get isAffordable() {
     if (Laitela.continuumActive) return false;
-    if (!player.break && this.cost.gt(DC.NUMMAX)) return false;
+    if (!player.break && this.cost.gt(DC.E450)) return false;
     return this.cost.lte(this.currencyAmount);
   }
 
@@ -541,7 +541,7 @@ class AntimatterDimensionState extends DimensionState {
    * @returns {boolean}
    */
   get isAffordableUntil10() {
-    if (!player.break && this.cost.gt(DC.NUMMAX)) return false;
+    if (!player.break && this.cost.gt(DC.E450)) return false;
     return this.costUntil10.lte(this.currencyAmount);
   }
 
@@ -595,7 +595,7 @@ class AntimatterDimensionState extends DimensionState {
     const postBreak = (player.break && !NormalChallenge.isRunning) ||
       InfinityChallenge.isRunning ||
       Enslaved.isRunning;
-    if (postBI && postBreak) return DC.BEMAX;
+    if (postBI && postBreak) return DC.BIMAX;
     return postBreak ? DC.BIMAX : DC.E315;
   }
 

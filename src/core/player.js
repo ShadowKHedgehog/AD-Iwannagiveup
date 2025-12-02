@@ -28,11 +28,11 @@ window.player = {
       isUnlocked: false,
       bought: DC.D0,
       amount: DC.D0,
-      cost: [DC.E8, DC.E9, DC.E10, DC.E20, DC.E140, DC.E200, DC.E250, DC.E280][tier],
+      cost: [DC.E11, DC.E17, DC.E21, DC.E75, DC.E180, DC.D3E235, DC.E300, DC.E450][tier],
       baseAmount: DC.D0
     })),
     time: Array.range(0, 8).map(tier => ({
-      cost: [DC.D1, DC.D5, DC.E2, DC.E3, DC.E2350, DC.E2650, DC.E3000, DC.E3350][tier],
+      cost: [DC.D1, DC.D5, DC.E2, DC.E3, DC.E6000, DC.E7500, DC.E9000, DC.E10500][tier],
       amount: DC.D0,
       bought: DC.D0
     }))
@@ -46,12 +46,12 @@ window.player = {
   challenge: {
     normal: {
       current: 0,
-      bestTimes: Array.repeat(DC.BEMAX, 11),
+      bestTimes: Array.repeat(DC.BIMAX, 11),
       completedBits: 0,
     },
     infinity: {
       current: 0,
-      bestTimes: Array.repeat(DC.BEMAX, 8),
+      bestTimes: Array.repeat(DC.BIMAX, 8),
       completedBits: 0,
     },
     eternity: {
@@ -956,7 +956,7 @@ export const Player = {
   get canCrunch() {
     if (Enslaved.isRunning && Enslaved.BROKEN_CHALLENGES.includes(NormalChallenge.current?.id)) return false;
     const challenge = NormalChallenge.current || InfinityChallenge.current;
-    const goal = challenge === undefined ? DC.NUMMAX : challenge.goal;
+    const goal = challenge === undefined ? DC.E450 : challenge.goal;
     return player.records.thisInfinity.maxAM.gte(goal);
   },
 

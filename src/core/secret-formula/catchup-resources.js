@@ -42,7 +42,7 @@ export const catchupResources = [
     name: "Infinity",
     id: 5,
     requiredStage: PROGRESS_STAGE.EARLY_INFINITY,
-    description: () => `Infinity is the first main reset layer. Reaching ${format(Number.MAX_VALUE, 2)} antimatter
+    description: () => `Infinity is the first main reset layer. Reaching ${format(DC.E450, 2)} antimatter
       allows you to reset everything up to this point in exchange for unlocking new content and resources.`
   },
   {
@@ -58,7 +58,7 @@ export const catchupResources = [
     id: 7,
     openH2pEntry: "Normal Challenges",
     requiredStage: PROGRESS_STAGE.EARLY_INFINITY,
-    description: () => `Challenges require you to reach ${format(Number.MAX_VALUE, 2)} antimatter under more difficult
+    description: () => `Challenges require you to reach ${format(DC.E450, 2)} antimatter under more difficult
       conditions. Completing challenges allows you to upgrade your Autobuyers.`
   },
   {
@@ -66,7 +66,7 @@ export const catchupResources = [
     id: 8,
     requiredStage: PROGRESS_STAGE.BREAK_INFINITY,
     description: () => `Upgrading your Big Crunch Autobuyer to the maximum allows you to surpass
-      ${format(Number.MAX_VALUE, 2)} antimatter, giving increasing amounts of Infinity Points with more antimatter.`
+      ${format(DC.E450, 2)} antimatter, giving increasing amounts of Infinity Points with more antimatter.`
   },
   {
     name: "Infinity Dimensions",
@@ -80,7 +80,7 @@ export const catchupResources = [
     id: 10,
     requiredStage: PROGRESS_STAGE.BREAK_INFINITY,
     description: () => `Infinity Challenges are new challenges with an antimatter goal above
-      ${format(Number.MAX_VALUE, 2)}. Completing them rewards upgrades and production boosts.`
+      ${format(DC.E450, 2)}. Completing them rewards upgrades and production boosts.`
   },
   {
     name: "Replicanti",

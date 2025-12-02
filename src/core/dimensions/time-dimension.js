@@ -57,7 +57,7 @@ export function calcHighestPurchaseableTD(tier, currency) {
     return Decimal.max(0, logC.sub(logBase).div(logMult)).floor();
   }
 
-  if (currency.gte(DC.E6000)) {
+  if (currency.gte(DC.E1000)) {
     logMult = TimeDimension(tier)._costMultiplier.mul(tier <= 4 ? 2.2 : 1).max(1).log10();
     const preInc = Decimal.log10(DC.E6000).sub(logBase).div(logMult);
     const postInc = logC.sub(logBase).sub(6000).div(logMult).div(TimeDimensions.scalingPast1e6000).clampMin(0);
@@ -68,7 +68,7 @@ export function calcHighestPurchaseableTD(tier, currency) {
     return Decimal.max(0, logC.sub(logBase).div(logMult).add(1)).floor();
   }
 
-  if (currency.lt(DC.E1300)) {
+  if (currency.lt(DC.E1000)) {
     const preInc = Decimal.log10(DC.NUMMAX).sub(logBase).div(logMult).floor();
     logMult = TimeDimension(tier)._costMultiplier.mul(1.5).max(1).log10();
     const decCur = logC.sub(preInc.mul(logMult));
@@ -76,7 +76,7 @@ export function calcHighestPurchaseableTD(tier, currency) {
     return Decimal.add(preInc, postInc);
   }
 
-  if (currency.lt(DC.E6000)) {
+  if (currency.lt(DC.E1000)) {
     logMult = TimeDimension(tier)._costMultiplier.mul(1.5).max(1).log10();
     const preInc = Decimal.log10(DC.E1300).sub(logBase).div(logMult).floor();
     logMult = TimeDimension(tier)._costMultiplier.mul(2.2).max(1).log10();
@@ -179,7 +179,7 @@ export function updateTimeDimensionCosts() {
 class TimeDimensionState extends DimensionState {
   constructor(tier) {
     super(() => player.dimensions.time, tier);
-    const BASE_COSTS = [null, DC.D1, DC.D5, DC.E2, DC.E3, DC.E2350, DC.E2650, DC.E3000, DC.E3350];
+    const BASE_COSTS = [null, DC.D1, DC.D5, DC.E2, DC.E3, DC.E6000, DC.E7500, DC.E9000, DC.E10500];
     this._baseCost = BASE_COSTS[tier];
     const COST_MULTS = [null, 3, 9, 27, 81, 24300, 72900, 218700, 656100].map(e => (e ? new Decimal(e) : null));
     this._costMultiplier = COST_MULTS[tier];

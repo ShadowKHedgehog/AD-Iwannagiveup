@@ -33,6 +33,8 @@ export const normalAchievements = [
     name: "5 Dimension Antimatter Punch",
     description: "Buy a 5th Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() {return `Multiply Dimension Boost Strength by ${formatX(5)}`;},
+    effect: 5
   },
   {
     id: 16,

@@ -141,6 +141,12 @@ function applyNDMultipliers(mult, tier) {
     if (Currency.antimatter.gt(1)){
       multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.16)))
     };
+    if (Currency.antimatter.gt(1e7000)){
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.37)))
+    };
+    if (Currency.antimatter.gt(1e45000)){
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.76)))
+    };
   }
   return multiplier;
 }

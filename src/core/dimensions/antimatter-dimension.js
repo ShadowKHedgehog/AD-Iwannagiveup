@@ -675,7 +675,7 @@ export const AntimatterDimensions = {
     // Stop producing antimatter at Big Crunch goal because all the game elements
     // are hidden when pre-break Big Crunch button is on screen.
     const hasBigCrunchGoal = !player.break || Player.isInAntimatterChallenge;
-    if (hasBigCrunchGoal && Currency.antimatter.gte(Player.infinityGoal)) return;
+    if (hasBigCrunchGoal && Currency.antimatter.gte(Player.InfinityGoal)) return;
 
     let maxTierProduced = EternityChallenge(3).isRunning ? 3 : 7;
     let nextTierOffset = 1;

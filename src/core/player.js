@@ -982,7 +982,7 @@ export const Player = {
 
   get infinityGoal() {
     const challenge = NormalChallenge.current || InfinityChallenge.current;
-    return challenge === undefined ? DC.NUMMAX : challenge.goal;
+    return challenge === undefined ? DC.E450 : challenge.goal;
   },
 
   get infinityLimit() {

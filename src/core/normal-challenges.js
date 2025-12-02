@@ -115,7 +115,7 @@ class NormalChallengeState extends GameMechanicState {
     if (Enslaved.isRunning && Enslaved.BROKEN_CHALLENGES.includes(this.id)) {
       return DC.E1E15;
     }
-    return DC.NUMMAX;
+    return DC.E450;
   }
 
   updateChallengeTime() {

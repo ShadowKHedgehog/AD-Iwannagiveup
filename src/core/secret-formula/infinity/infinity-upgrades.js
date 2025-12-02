@@ -13,7 +13,7 @@ export const infinityUpgrades = {
     id: "timeMult",
     cost: 1,
     description: "Antimatter Dimensions gain a multiplier based on time played",
-    effect: () => Decimal.pow(Time.totalTimePlayed.totalMinutes.div(2), 0.15),
+    effect: () => Decimal.pow(Time.totalTimePlayed.totalMinutes.div(2), 0.54),
     formatEffect: value => formatX(value, 2, 2),
     charged: {
       description: "Antimatter Dimensions gain a power effect based on time played and Teresa level",

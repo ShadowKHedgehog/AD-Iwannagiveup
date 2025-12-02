@@ -25,16 +25,14 @@ export const normalAchievements = [
     name: "L4D: Left 4 Dimensions",
     description: "Buy a 4th Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
-    get reward() {return `Fourth Antimatter Dimensions multiply all Dimension Multipliers Slightly`;},
-    effect: () => Decimal.pow(AntimatterDimension(4).amount.div(1.5), 0.25)
+    
   },
   {
     id: 15,
     name: "5 Dimension Antimatter Punch",
     description: "Buy a 5th Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
-    get reward() {return `Multiply Dimension Boost Strength by ${formatX(5)}`;},
-    effect: 5
+    
   },
   {
     id: 16,

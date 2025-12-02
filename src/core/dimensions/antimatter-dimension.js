@@ -42,8 +42,7 @@ export function antimatterDimensionCommonMultiplier() {
     AlchemyResource.dimensionality,
     PelleUpgrade.antimatterDimensionMult
   );
-if (AntimatterDimension(8).amount.gte(1)) multiplier = multiplier.timesEffectsOf(Achievement(18));
-if (AntimatterDimension(4).amount.gte(1)) multiplier = multiplier.timesEffectsOf(Achievement(14));
+
   multiplier = multiplier.dividedByEffectOf(InfinityChallenge(6));
   multiplier = multiplier.times(getAdjustedGlyphEffect("powermult"));
   multiplier = multiplier.times(Currency.realityMachines.value.powEffectOf(AlchemyResource.force));
@@ -139,13 +138,22 @@ function applyNDMultipliers(mult, tier) {
    
   if (tier === 1){
     if (Currency.antimatter.gt(1)){
-      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.16)))
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.13)))
+    };
+    if (Currency.antimatter.gt(1e200)){
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.19)))
+    };
+    if (Currency.antimatter.gt(1e308)){
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.21)))
     };
     if (Currency.antimatter.gt(1e7000)){
       multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.37)))
     };
     if (Currency.antimatter.gt(1e45000)){
       multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.76)))
+    };
+    if (Currency.antimatter.gt(1e85000)){
+      multiplier = multiplier.div((Decimal.pow(Currency.antimatter.value,0.77)))
     };
   }
   return multiplier;

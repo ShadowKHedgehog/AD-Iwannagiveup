@@ -552,16 +552,16 @@ export const Replicanti = {
       amount: unlocked ? DC.D1 : DC.D0,
       timer: DC.D0,
       chance: new Decimal(0.01),
-      chanceCost: DC.E150,
+      chanceCost: DC.E2,
       interval: DC.E3,
-      intervalCost: DC.E140,
+      intervalCost: DC.E2,
       boughtGalaxyCap: DC.D0,
       galaxies: DC.D0,
-      galCost: DC.E170,
+      galCost: DC.E4,
     };
   },
   unlock(freeUnlock = false) {
-    const cost = DC.E140.dividedByEffectOf(PelleRifts.vacuum.milestones[1]);
+    const cost = DC.E2;
     if (player.replicanti.unl) return;
     if (freeUnlock || Currency.infinityPoints.gte(cost)) {
       if (!freeUnlock) Currency.infinityPoints.subtract(cost);
